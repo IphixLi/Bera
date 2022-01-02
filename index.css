@@ -1,0 +1,257 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+*{
+      margin:0;
+      font-family:'Roboto Condensed',sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;;
+  }
+  
+  
+  body{
+  background-color:#e5dee7;
+  display:flex;
+  flex-direction:column;
+  }
+
+  .navbar{
+      display:flex;
+      flex-direction:row;
+      justify-content:space-between;
+      background-color:white;
+      color:#4E2A84;
+      font-weight:600;
+      position:sticky;
+      width:100vw;
+      top:0;
+      height:5%;
+  padding-bottom:20px;
+  margin-bottom:6vh;
+  z-index:1;
+  }
+ 
+  .links{
+      display:flex;
+      flex-direction:row;
+      list-style:none;
+      justify-content: space-between;
+      width:30%;
+      margin:20px;
+      padding-right:20px;
+
+
+  }
+
+  .nav-link{
+    text-decoration-line:none;
+    font-size:1.1rem;
+    font-weight:600;
+    color:#4E2A84;
+    padding:3px;
+  }
+
+  .nav-link:hover{
+    border-bottom: 1px solid #4E2A84;
+    
+  }
+
+  #subject{
+      font-size:35px;
+      margin:10px 0 20px 20px;
+  }
+
+  #main{
+    margin-top:6vh;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+
+  }
+
+  .intro{
+      display:flex;
+      flex-direction:row;
+      justify-content:center;
+      align-items:center;
+      width:70%;
+      margin:0 auto;
+      height:50vh;
+      padding:30px;
+      background-color: #4E2A84;
+  }
+
+  .profile{
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    align-self:center;
+    width:200px;
+  }
+
+  .image{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:180px;
+  }
+
+  .image>img{
+    object-fit:contain;
+    height:150px;
+    border-radius:50%;
+  }
+.socials{
+display:flex;
+flex-direction:row;
+height:30px;
+width:150px;
+justify-content:space-evenly;
+padding:10px;
+
+    }
+  
+ #social-button{
+    object-fit:contain;
+    height:30px;
+  }
+
+  .description{
+      padding-left:80px;
+  }
+
+  #school{
+    color:black;
+  }
+  #name{
+    color:white;
+  }
+
+
+  #projects{
+    height:auto;
+    justify-content: center;
+    align-items: center;
+  }
+  #proj-title{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:#4E2A84;
+    margin-top:20px;
+  
+
+  }
+.projects-grid{
+  text-align: center;
+  padding:10px;
+  background-color:inherit;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 10px;
+  width: 70%;
+  max-width: 1500px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
+  .project-container{
+      width:80%;
+      height:20rem;
+      background-color:white;
+      box-shadow:0 3px 10px rgb(0 0 0 / 0.2);
+      padding:20px;
+      margin:30 10 auto 10;
+      display:flex;
+      flex-direction:column;
+      justify-content: center;
+      align-items: center;
+      text-align:left;
+      padding:20px;
+  }
+
+  @media (max-width: 30.625em) {
+    #projects{
+      padding: 6rem 6rem;
+    }
+  
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .footer{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    padding-top:20px;
+    background-color: #4E2A84;
+    color:white;
+ 
+  }
+
+  #more{
+    padding:10px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    margin-bottom:50px;
+
+  }
+
+  .project-image>img{
+    height:10rem;
+    background-color:inherit;
+    width:16rem;
+    margin-top:10px;
+  }
+
+  .project-title{
+    color:#4E2A84;
+    font-weight:800;
+    margin-top:20px;
+    display:block;
+  }
+
+  .project-description{
+  margin:20px 0 20px 15px;
+  }
+
+  .proj-link{
+    text-decoration:none;
+    color:#4E2A84;
+    font-weight: 600;
+    display:block;
+    margin-bottom:15px;
+  }
+
+  .proj-link:hover{
+    border-bottom: 1px solid #4E2A84;
+    
+  }
+
+  .stack{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    font-weight:800;
+    size:25px;
+  }
+
+  #subtitle{
+color:#4E2A84;
+font-weight: 900;
+padding: 10px;
+margin-top:10px;
+font-size: 25px;
+  }
+.handle{
+  color:#4E2A84;
+  text-decoration:none;
+}
+
+#bio{
+color:white;
+}
