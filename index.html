@@ -12,48 +12,58 @@
   <link rel="icon" href="https://avatars.githubusercontent.com/u/84729199?s=60&v=4" type="image/x-icon">
   <link rel="stylesheet" href="index.css">
 </head>
+<script src="graph.js" defer></script>
+<script src='https://d3js.org/d3.v4.min.js'></script>
+<script src='https://d3js.org/topojson.v2.min.js'></script>
+<script src='https://d3js.org/d3-scale-chromatic.v1.min.js'></script>
+<script src="portfolio.js"></script>
 
 <body>
 <nav class="navbar">
     <p id="subject">PORTFOLIO</p>
-    <ul class="links"> 
-        <li><a class="nav-link" href="#about">About</a></li>
-        <li><a  class="nav-link"href=#projects>Projects</a></li>
-        <li><a class="nav-link" href="pages/iphigenie_resume.pdf" target="_blank">Resume</a></li>
+    <ul class="links" role="navigation"> 
+        <li tabindex="0" aria-current="page" ><a class="nav-link" aria-current="page" aria-labelledly="home" href="#about">Home</a></li>
+        <li tabindex="1" ><a class="nav-link" aria-labelledly="bio" href="bio.html">Bio</a></li>
+        <li tabindex="2" ><a  class="nav-link" aria-labelledly="projects" href=#projects>Projects</a></li>
+        <li tabindex="3"><a class="nav-link" aria-labelledly="resume" href="pages/iphigenie_resume.pdf" target="_blank">Resume</a></li>
         </ul>
 </nav>
 
-<div id="main">
+<div class="main">
     <div id="about" class="intro">
         <div class="profile">
             <div class="image">
             <img
              id="profile"
              src="images/profile.jpg"
+             alt="profile"
              />
             </div>
      
             <div class="socials">
         
-                    <div id="social"> <a href="https://www.linkedin.com/in/bera-marie-iphigenie-3a68b6143/"
+                    <div tabindex="4"> <a href="https://www.linkedin.com/in/bera-marie-iphigenie-3a68b6143/"
                         class="contact-links"
-                        target="_blank">
-                        <img id="social-button" src="https://cdn-icons-png.flaticon.com/512/174/174857.png"/>
+                        target="_blank"
+                        aria-labelledly="linkedin">
+                        <img id="social-button" alt="linkedin" src="https://cdn-icons-png.flaticon.com/512/174/174857.png"/>
                    </a>
                     </div>
                    
-                     <div>
+                     <div tabindex="5">
                      <a href="https://github.com/IphixLi"
                         class="contact-links"
-                        target="_blank" >
-                       <img id="social-button" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"/>
+                        target="_blank" 
+                        aria-labelledly="github">
+                       <img id="social-button" alt="github" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"/>
                      </a>
                      </div>
-                     <div>
+                     <div tabindex="6">
                         <a href="https://codepen.io/IphixLi"
                            class="contact-links"
-                           target="_blank" >
-                          <img id="social-button" src="https://www.pngrepo.com/png/332289/512/codepen-circle.png"/>
+                           target="_blank" 
+                           aria-labelledly="codepen">
+                          <img id="social-button" alt="codepen" src="https://www.pngrepo.com/png/332289/512/codepen-circle.png"/>
                         </a>
                         </div>
         
@@ -62,158 +72,163 @@
         </div>
         <div class="description">
             <h1 id="name"> Iphigenie Marie Bera</h1>
-            <h2 id="school">Computer Science student at Northwestern University</h2>
             <br/>
-        <p id="bio">I am a second Year computer science student at Northwestern University with a minor in Data science and Engineering.
-            I am interested in design of data intensive applications that can scale efficiently. I focus on accessibility and modularity while designing apps. my primary languages are Javascript and Python.
-            In my free time I like to teach myself developer technologies and interact with coding community.
+        <p class="bio">I am a third year computer science student at Northwestern University with a minor in Data science and Engineering.
+            I am interested in design of data intensive applications that can scale efficiently. I have have prior experience in Data engineering and Web development. 
+            I am looking for summer 2023 Software engineering internship opportunities.
         </p>
+        <br/>
+        <Button><a aria-labelledly="full-bio" href="bio.html">Read full Bio</a></Button>
         </div>
         </div>
-        <div class="stack">
-            <div id="subtitle">Technologies</div>
-            <br/>
-            <div>
-            JavaScript | 
-            Python |
-            Racket | 
-            MATLAB |
-            SQL |  
-            React.js | 
-            Node.js | 
-            Express.js |
-            GraphQLSQL | 
-            CSS  | 
-            HTML5 | 
-            Git | 
-            MongoDB |  
-            D3.js | 
-            Bootstrap | 
-            MINITAB
-            </div>
-    </div>
-        <div id="projects">
-        <h2 id="proj-title">Some projects</h2>
+        <div class="projects">
+                <div class="proj-title">FEATURE PROJECT</div>
+                <div id="graph">
+                    <h1 id="title">United States Education Attainment</h1>
+                    <div id="description">
+                      Percentage of Adults age 25 and older with a bachelor's degree or higher (2010-2014)</div>
+                    <svg width="960" height="600"></svg>
+                    <div id="source">
+                      Source:
+                      <a aria-labelledly="education-source" href="https://www.ers.usda.gov/data-products/county-level-data-sets/download-data.aspx"
+                         >USDA Economic Research Service</a>
+                    </div>
+                </div>
+
+
+        <div class="proj-title">OTHER PROJECTS</div>
        
         <div class="projects-grid">
-        <div class="project-container">
+        <div tabindex="7" class="project-container">
+                <div class="project-title">KOREAN DRAMA DATASET</div>
+                <div class="project-image">
+                <img
+                 src="images/hosplaylist.jpg"
+                 alt="hospital playlist cover photo"
+                 />
+                </div>
+                <div class="project-description">
+                    <p>korean drama dataset for easy querying and accessibility from Webscraped sources
+                    </p>
+                </br>
+                    <div><a aria-labelledly="project-demo" class="proj-link" href="https://iphixli.github.io/Projects/korean-drama-webscraping/" target="_blank"><i class="far fa-file-code"></i>Read more</a></div>
+                    <div> <a aria-labelledly="kaggle-data" class="proj-link" href="https://www.kaggle.com/datasets/iphigeniebera/korean-drama-list-about-740-unique-dramas" target="_blank"><i class="fas fa-laptop"></i>Kaggle Dataset</a></div>
+                </div>
+        </div>
+
+
+        <div tabindex="8" class="project-container">
         <div class="project-title">POMODORO TIMER</div>
         <div class="project-image">
         <img
          class="thumbnail"
          src="images/clock.png"
+         alt="pomodoro timer cover photo"
          />
         </div>
-        <div class="project-description">
+        <div tabindex="9" class="project-description">
             <p>A web app that use the pomodoro technique with customizable timer settings.
             </p>
         </br>
-            <p><a class="proj-link" href="https://github.com/IphixLi/pomodoro-timer" target="_blank"><i class="far fa-file-code"></i>Source code</a></p>
-            <p> <a class="proj-link" href="https://timerclock.herokuapp.com/" target="_blank"><i class="fas fa-laptop"></i>Live demo</a></p>
+            <p><a class="proj-link" aria-labelledly="clock-demo" href="https://github.com/IphixLi/pomodoro-timer" target="_blank"><i class="far fa-file-code"></i>Source code</a></p>
+            <p> <a class="proj-link" aria-labelledly="clock-code" href="https://timerclock.herokuapp.com/" target="_blank"><i class="fas fa-laptop"></i>Live demo</a></p>
         </div>
 
         </div>
 
-        <div class="project-container">
+        <div tabindex="10" class="project-container">
             <div class="project-title">RANDOM QUOTE GENERATOR</div>
             <div class="project-image">
             <img
              id="project"
              src="images/quotes.png"
+             alt="random quotes cover photo"
              />
             </div>
             <div class="project-description">
-                <p>A front-end web app that generates random quote using external API
+                <p>A React front-end web app that generates random quote using external API Calls
                 </p>
             </br>
-                <p><a class="proj-link" href="https://github.com/IphixLi/random-quote-generator" target="_blank"><i class="far fa-file-code"></i>Source code</a></p>
-                <p> <a class="proj-link" href="https://getquoteapp.herokuapp.com/" target="_blank"><i class="fas fa-laptop"></i>Live demo</a></p>
+                <p><a class="proj-link" aria-labelledly="quote-demo" href="https://github.com/IphixLi/random-quote-generator" target="_blank"><i class="far fa-file-code"></i> Source code</a></p>
+                <p> <a class="proj-link" aria-labelledly="quote-code" href="https://getquoteapp.herokuapp.com/" target="_blank"><i class="fas fa-laptop"></i> Live demo</a></p>
             </div>
     
         </div> 
-        <div class="project-container">
-            <div class="project-title">CALCULATOR</div>
-            <div class="project-image">
-            <img
-             id="project"
-             src="images/calculator.png"
-             />
-            </div>
-            <div class="project-description">
-                <p>A react-app calculator performing basing arthmetic operations
-                </p>
-            </br>
-                <p><a class="proj-link" href="https://codepen.io/IphixLi/pen/ZEKZMML" target="_blank"><i class="far fa-file-code"></i>Source code</a></p>
-                <p> <a class="proj-link" href="https://codepen.io/IphixLi/full/ZEKZMML" target="_blank"><i class="fas fa-laptop"></i>Live demo</a></p>
-            </div>
-        </div>
-        <div class="project-container">
-            <div class="project-title">Markdown Previewer</div>
+        <div tabindex="11" class="project-container">
+            <div class="project-title">MARKDOWN PREVIEWER</div>
             <div class="project-image">
             <img
              id="project"
              src="images/markdown.png"
+             alt="markdown cover photo"
              />
             </div>
             <div class="project-description">
                 <p>A markdown web-app with areas for previewing text and for converted text
                 </p>
             </br>
-                <p><a class="proj-link" href="https://codepen.io/IphixLi/pen/qBmNoeQ" target="_blank"><i class="far fa-file-code"></i>Source code</a></p>
-                <p> <a class="proj-link" href="https://codepen.io/IphixLi/full/qBmNoeQ" target="_blank"><i class="fas fa-laptop"></i>Live demo</a></p>
+                <p><a class="proj-link" aria-labelledly="markdown-demo" href="https://codepen.io/IphixLi/pen/qBmNoeQ" target="_blank"><i class="far fa-file-code"></i>Source code</a></p>
+                <p> <a class="proj-link" aria-labelledly="markdown-code" href="https://codepen.io/IphixLi/full/qBmNoeQ" target="_blank"><i class="fas fa-laptop"></i>Live demo</a></p>
             </div>
         </div>
-        <div class="project-container">
+        <div tabindex="12" class="project-container">
             <div class="project-title">ROMAN TO NUMERAL CONVERTER</div>
             <div class="project-image">
             <img
              id="project"
              src="images/roman.png"
+             alt=""roman converter cover photo
              />
             </div>
             <div class="project-description">
-                <p>A web-app than allow to convert between roman to numeral number systems
+                <p>A web-app to convert between roman to numeral numbers
                 </p>
             </br>
-                <p><a class="proj-link" href="https://codepen.io/IphixLi/pen/MWmaoJV" target="_blank"><i class="far fa-file-code"></i>Source code</a></p>
-                <p> <a class="proj-link" href="https://codepen.io/IphixLi/full/MWmaoJV" target="_blank"><i class="fas fa-laptop"></i>Live demo</a></p>
+                <p><a class="proj-link" aria-labelledly="roman-demo" href="https://codepen.io/IphixLi/pen/MWmaoJV" target="_blank"><i class="far fa-file-code"></i>Source code</a></p>
+                <p> <a class="proj-link" aria-labelledly="roman-code" href="https://codepen.io/IphixLi/full/MWmaoJV" target="_blank"><i class="fas fa-laptop"></i>Live demo</a></p>
             </div>
         </div>
-        <div class="project-container">
-            <div class="project-title">Drum Machine</div>
+        <div tabindex="13" class="project-container">
+            <div class="project-title">DRUM MACHINE</div>
             <div class="project-image">
             <img
              id="project"
              src="images/drum.png"
+             alt="drums cover photo"
              />
             </div>
             <div class="project-description">
                 <p>A drum machine than plays internet classic sound effects
                 </p>
             </br>
-                <p><a class="proj-link" href="https://codepen.io/IphixLi/pen/eYWQQKE" target="_blank"><i class="far fa-file-code"></i>Source code</a></p>
-                <p> <a class="proj-link" href="https://codepen.io/IphixLi/full/eYWQQKE" target="_blank"><i class="fas fa-laptop"></i>Live demo</a></p>
+                <p><a class="proj-link" aria-labelledly="drum-demo" href="https://codepen.io/IphixLi/pen/eYWQQKE" target="_blank"><i class="far fa-file-code"></i>Source code</a></p>
+                <p> <a class="proj-link" aria-labelledly="drum-code" href="https://codepen.io/IphixLi/full/eYWQQKE" target="_blank"><i class="fas fa-laptop"></i>Live demo</a></p>
             </div>
         </div>
     </div>
         </div>
-        <h4 id="more">For more projects visit my  <a class="handle" href="https://codepen.io/IphixLi" target="_blank">
-            &#160 codepen</a> &#160 and  &#160 <a class="handle" href="https://github.com/IphixLi" target="_blank">
-                 Github</a> &#160 accounts</h4>
-        </div>
-        
+</div>      
 </div>
 <div class="footer">
-    <p>
-    Created by IphixLi | 2021
-    </p>
+    <div class="footer-container">
+    <div class="form">
+    <form name="mail" id="mail"  onsubmit="submitform();return true">
+        <div>Join my Mailing List</div>
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="fname" placeholder="Your First name.." required>
+          
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lname" placeholder="Your last name.." required>
+
+        <label for="mail_field">Email </label>
+        <input type="email" id="mail_field" name="mail_field" placeholder="abc@inlook.com" required>
+        <input type="submit" class="button" id="submit" value="Submit">    
+    </form>
+    <button  class="button" onclick="clearform()">ENTER NEW EMAIL</button>
+    
     </div>
 
-     <!-- Import Particles.js and app.js files -->
-     <script src=
-     "particles.js-master/particles.js">
- </script>
- <script src=
-     "/particles.js-master/demo/js/app.js">
- </script>
+    <div id="footer-note">Created by Iphigenie Bera | 2022</div>
+    </div>
+</div>
 </body>
